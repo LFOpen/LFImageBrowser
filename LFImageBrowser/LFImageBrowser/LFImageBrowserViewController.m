@@ -26,6 +26,8 @@ static NSString *cellReuseID = @"LFImageBrowserCollectionViewCellID";
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.pageControl.frame = CGRectMake(0, self.view.bounds.size.height - 50.0, self.view.bounds.size.width, 50.0);
+    self.mainCollectionView.frame = self.view.bounds;
     [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
@@ -67,7 +69,7 @@ static NSString *cellReuseID = @"LFImageBrowserCollectionViewCellID";
 /******************************************************************/
 -(UIPageControl *)pageControl {
     if (_pageControl == nil) {
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 50.0, self.view.bounds.size.width, 50.0)];
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
         [_pageControl addTarget:self action:@selector(pageCountrolAction) forControlEvents:UIControlEventTouchUpInside];
         _pageControl.numberOfPages = self.imageAddresses.count;
         _pageControl.currentPage = self.currentIndex;
@@ -83,7 +85,7 @@ static NSString *cellReuseID = @"LFImageBrowserCollectionViewCellID";
         layout.itemSize = self.view.bounds.size;
         layout.minimumLineSpacing = 0.0;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        _mainCollectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+        _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [_mainCollectionView setBackgroundColor:self.backGroundColor];
         [_mainCollectionView setPagingEnabled:YES];
         [_mainCollectionView setBounces:NO];
