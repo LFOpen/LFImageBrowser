@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/LFOpen/LFImageBrowser"
   s.license      = "MIT"
   s.author             = { "archerLj" => "lj0011977@163.com" }
-  s.platform     = :ios, "5.0"
+  s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/LFOpen/LFImageBrowser.git", :tag => "#{s.version}" }
   s.source_files  = "LFImageBrowser/LFImageBrowser/*.{h,m}"
   s.requires_arc = true
