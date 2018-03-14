@@ -30,7 +30,7 @@
                           @"http://e.hiphotos.baidu.com/image/pic/item/ac345982b2b7d0a27091d9b8c7ef76094b369abf.jpg",
                           @"http://a.hiphotos.baidu.com/image/pic/item/64380cd7912397dd21e672225582b2b7d0a2877d.jpg"
                           ];
-    vc.currentIndex = 3;
+    vc.currentIndex = 10;
     vc.showPageControl = YES;
     vc.pageIndicatorTintColor = [UIColor lightGrayColor];
     vc.currentPageIndicatorTintColor = [UIColor whiteColor];

@@ -28,6 +28,8 @@ static NSString *cellReuseID = @"LFImageBrowserCollectionViewCellID";
     
     self.pageControl.frame = CGRectMake(0, self.view.bounds.size.height - 50.0, self.view.bounds.size.width, 50.0);
     self.mainCollectionView.frame = self.view.bounds;
+    
+    NSAssert(self.currentIndex < self.imageAddresses.count, @"currentIndex 超出数组边界");
     [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
